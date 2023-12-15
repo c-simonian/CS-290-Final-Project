@@ -1,0 +1,89 @@
+### CREATE five documents.
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "John & Vinnys",
+    "cuisine": "Italian",
+    "location": "Los Angeles, CA",
+    "rating": 7,
+    "reviewdate": "2023-11-29T22:42:13.355Z" }
+
+
+### CREATE 2
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "Cento Pasta Bar",
+    "cuisine": "Italian",
+    "location": "Los Angeles, CA",
+    "rating": 9
+    }
+
+### CREATE 3
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "Bestia",
+    "cuisine": "Italian",
+    "location": "Los Angeles, CA",
+    "rating": 8
+}
+
+### CREATE 4
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "Scarpetta",
+    "cuisine": "Italian",
+    "location": "New York, NY",
+    "rating": 10
+}
+
+### CREATE 5
+POST http://localhost:3000/restaurants HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "John's of Bleecker Street",
+    "cuisine": "Street Pizza",
+    "location": "New York, NY",
+    "rating": 10
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/restaurants HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/restaurants/6567f0b3c4b9e3afdf3c88aa HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the ID in the following request with one that exists
+### and update the year:
+PUT http://localhost:3000/restaurants/6567f0b6c4b9e3afdf3c88ae HTTP/1.1
+content-type: application/json
+
+{
+    "restaurantName": "Cento Pasta Bar",
+    "cuisine": "Italian",
+    "location": "Los Angeles, CA",
+    "rating": 9,
+    "reviewDate": "2023-11-29T23:34:23.442Z" 
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/restaurants/6567f0b1c4b9e3afdf3c88a8 HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/restaurants HTTP/1.1
+
